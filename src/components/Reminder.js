@@ -39,16 +39,16 @@ export const Reminder = ({ reminder, deleteReminder, setEdit }) => {
         }
         audio.play();
         setTimeout(() => {
-          console.log('Pausing audio after 1 second');
+          
           audio.pause();
-          // After audio is paused, remove the reminder
+          
           deleteReminder(reminder.id);
         }, 1000);
       }, delay);
     } else {
-      console.log('Time Passed');
+     
       setTimeout(() => {
-        console.log('30 seconds have passed. Removing the reminder.');
+       
         if (reminder.browserNotification) {
           addNotification({
             title: 'Reminder',
@@ -59,9 +59,9 @@ export const Reminder = ({ reminder, deleteReminder, setEdit }) => {
         }
         audio.play();
         setTimeout(() => {
-          console.log('Pausing audio after 1 second');
+         
           audio.pause();
-          // After audio is paused, remove the reminder
+          
           deleteReminder(reminder.id);
         }, 1000);
       }, 3);
@@ -70,6 +70,7 @@ export const Reminder = ({ reminder, deleteReminder, setEdit }) => {
     return () => {
       if (id !== null) {
         clearTimeout(id);
+        console.log(`Reminder with ID ${reminder.id} will unmount`);
       }
     };
   }, [reminder.time, reminder.browserNotification, reminder.sound]);

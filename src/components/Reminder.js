@@ -70,7 +70,7 @@ export const Reminder = ({ reminder, deleteReminder, setEdit }) => {
     return () => {
       if (id !== null) {
         clearTimeout(id);
-        console.log(`Reminder with ID ${reminder.id} will unmount`);
+        
       }
     };
   }, [reminder.time, reminder.browserNotification, reminder.sound]);

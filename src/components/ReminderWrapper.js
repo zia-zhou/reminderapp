@@ -48,7 +48,7 @@ function ReminderWrapper()  {
   }
 
   const editReminders = (id, updatedReminder) => {
-    console.log('reminder activated', id, updatedReminder.id, updatedReminder);
+    
     setReminders(
       reminders.map((reminder) =>
         reminder.id === id ? { ...reminder, ...updatedReminder } : reminder
